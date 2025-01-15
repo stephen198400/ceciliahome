@@ -1,4 +1,5 @@
 import { ContactDialog } from '@/components/contact-dialog';
+import { PhoneButton } from '@/components/PhoneButton';
 import { ReviewCard } from '@/components/ReviewCard';
 import { Button } from '@/components/ui/button';
 import {
@@ -6,7 +7,6 @@ import {
 	Clock,
 	Cpu,
 	FileCheck,
-	Phone,
 	Shield,
 	UserCheck,
 	Users,
@@ -22,14 +22,7 @@ export default function Home() {
 					<Link href="/" className="text-2xl font-bold">
 						Cecilia Home
 					</Link>
-
-					<Link
-						href="tel:+15109091933"
-						className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors border border-gray-200 rounded-full px-4 py-2 hover:border-blue-600 hover:shadow-md bg-white"
-					>
-						<Phone className="h-5 w-5" />
-						<span className="text-sm font-medium">510 909 1933</span>
-					</Link>
+					<PhoneButton />
 				</div>
 			</header>
 
@@ -721,13 +714,7 @@ export default function Home() {
 											Get Free Consultation
 										</Button>
 									</ContactDialog>
-									<Link
-										href="tel:+15109091933"
-										className="flex items-center justify-center bg-white text-blue-900 hover:bg-blue-50 w-full rounded-md px-4 py-2 transition-colors"
-									>
-										<Phone className="mr-2 h-5 w-5" />
-										<span className="text-sm font-medium">510 909 1933</span>
-									</Link>
+									<PhoneButton />
 								</div>
 							</div>
 
