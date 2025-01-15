@@ -9,19 +9,6 @@ const nextConfig = {
 						key: 'X-Robots-Tag',
 						value: 'index, follow',
 					},
-					{
-						key: 'Cache-Control',
-						value: 'no-store, no-cache, must-revalidate',
-					},
-				],
-			},
-			{
-				source: '/favicon.ico',
-				headers: [
-					{
-						key: 'Cache-Control',
-						value: 'no-cache, no-store, must-revalidate',
-					},
 				],
 			},
 		];
