@@ -20,8 +20,18 @@ export const metadata: Metadata = {
 	keywords:
 		'structural engineering, wildfire damage, fire damage inspection, structural assessment, insurance claims, California engineer, post-fire inspection',
 	icons: {
-		icon: [{ url: '/favicon.ico' }, { url: '/icon.png', type: 'image/png' }],
-		apple: [{ url: '/apple-icon.png' }],
+		icon: [
+			{ url: '/favicon.ico', sizes: 'any' },
+			{ url: '/icon.png', type: 'image/png', sizes: '192x192' },
+		],
+		shortcut: ['/favicon.ico'],
+		apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+		other: [
+			{
+				rel: 'mask-icon',
+				url: '/icon.png',
+			},
+		],
 	},
 	openGraph: {
 		title:
