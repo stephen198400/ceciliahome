@@ -1,12 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	async headers() {
+		return [
+			{
+				source: '/:path*',
+				headers: [
+					{
+						key: 'X-Robots-Tag',
+						value: 'index, follow',
+					},
+				],
+			},
+		];
+	},
 	images: {
 		formats: ['image/avif', 'image/webp'],
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'api.dicebear.com',
-				pathname: '/7.x/**',
+				hostname: '**',
 			},
 		],
 		deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
