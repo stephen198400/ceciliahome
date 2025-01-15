@@ -19,7 +19,10 @@ export default function Home() {
 		<div className="flex min-h-screen flex-col">
 			<header className="border-b">
 				<div className="container mx-auto flex h-20 items-center justify-between px-4">
-					<Link href="/" className="text-2xl font-bold">
+					<Link
+						href="/"
+						className="text-2xl font-bold hover:text-blue-600 transition-colors duration-300"
+					>
 						Cecilia Home
 					</Link>
 					<PhoneButton />
@@ -32,14 +35,14 @@ export default function Home() {
 					<div className="container mx-auto grid gap-12 px-4 md:grid-cols-2 md:items-center">
 						<div className="space-y-8">
 							<div>
-								<p className="text-sm uppercase font-medium text-blue-600">
+								<p className="text-sm uppercase font-medium text-blue-600 animate-fade-in">
 									Rebuild Stronger
 								</p>
-								<h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl">
+								<h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl animate-fade-in-up">
 									Expert Post-Wildfire Structural Inspection
 								</h1>
 							</div>
-							<p className="text-lg text-muted-foreground">
+							<p className="text-lg text-muted-foreground animate-fade-in-up [animation-delay:200ms]">
 								Wildfire damage? Serving Southern California with professional
 								structural inspections and certified reports for your insurance
 								claims. Our reliable assessments help protect your property and
@@ -62,7 +65,7 @@ export default function Home() {
 							<ContactDialog>
 								<Button
 									size="lg"
-									className="bg-blue-600 text-white hover:bg-blue-700"
+									className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
 								>
 									Get Free Consultation
 								</Button>
@@ -260,9 +263,9 @@ export default function Home() {
 							].map((service, i) => (
 								<div
 									key={i}
-									className="group relative space-y-4 rounded-2xl border p-8"
+									className="group relative space-y-4 rounded-2xl border p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 will-change-transform"
 								>
-									<service.icon className="h-8 w-8 text-blue-600 mb-4" />
+									<service.icon className="h-8 w-8 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
 									<h3 className="text-xl font-bold">{service.title}</h3>
 									<p className="text-muted-foreground">{service.description}</p>
 								</div>
@@ -333,7 +336,7 @@ export default function Home() {
 				{/* Features Section */}
 				<section className="py-24">
 					<div className="container mx-auto px-4">
-						<div className="grid gap-16 lg:grid-cols-2">
+						<div className="grid gap-16 lg:grid-cols-2 hover:transform hover:scale-[1.02] transition-all duration-500">
 							{/* 左侧图片 - 在大屏幕显示 */}
 							<div className="hidden lg:block h-full">
 								<div className="relative h-full rounded-2xl overflow-hidden">
@@ -387,10 +390,13 @@ export default function Home() {
 												'Free on-site inspection and consultation, followed by a comprehensive professional report for your property.',
 										},
 									].map((feature, i) => (
-										<div key={i} className="space-y-3">
+										<div
+											key={i}
+											className="space-y-3 hover:transform hover:scale-105 transition-all duration-300"
+										>
 											<div className="flex items-center gap-3">
 												<div className="flex-shrink-0">
-													<feature.icon className="h-6 w-6 md:h-6 md:w-6 lg:h-7 lg:w-7 xl:h-8 xl:w-8 text-blue-600" />
+													<feature.icon className="h-6 w-6 md:h-6 md:w-6 lg:h-7 lg:w-7 xl:h-8 xl:w-8 text-blue-600 group-hover:rotate-12 transition-transform duration-300" />
 												</div>
 												<h3 className="text-lg md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight whitespace-nowrap">
 													{feature.title}
@@ -463,7 +469,7 @@ export default function Home() {
 								].map((step, i) => (
 									<div
 										key={i}
-										className="relative grid md:grid-cols-2 items-center gap-8"
+										className="relative grid md:grid-cols-2 items-center gap-8 hover:transform hover:scale-[1.02] transition-all duration-500"
 									>
 										{/* 在小屏幕时始终保持相同顺序 */}
 										<div className="block lg:hidden">
@@ -693,7 +699,7 @@ export default function Home() {
 				{/* CTA Section */}
 				<section className="py-24">
 					<div className="container mx-auto px-4">
-						<div className="rounded-2xl bg-gradient-to-br from-blue-700 to-blue-900 p-12 text-center md:p-24 text-white">
+						<div className="rounded-2xl bg-gradient-to-br from-blue-700 to-blue-900 p-12 text-center md:p-24 text-white hover:shadow-2xl transition-all duration-500">
 							<h2 className="text-3xl font-bold md:text-4xl">
 								Get Professional Help for Your Fire-Damaged Home!
 							</h2>
@@ -708,7 +714,7 @@ export default function Home() {
 									<ContactDialog>
 										<Button
 											size="lg"
-											className="bg-white text-blue-900 hover:bg-blue-50 w-full"
+											className="bg-white text-blue-900 hover:bg-blue-50 w-full transform hover:scale-105 transition-all duration-300"
 										>
 											<Calendar className="mr-2 h-5 w-5" />
 											Get Free Consultation
