@@ -54,10 +54,11 @@ export default function Home() {
 						</div>
 						<div className="relative aspect-square">
 							<Image
-								src="/hero.jpg"
+								src="/hero.webp"
 								alt="Expert Post-Wildfire Structural Inspection"
 								width={1920}
 								height={1080}
+								sizes="(max-width: 768px) 100vw, 50vw"
 								priority
 								quality={85}
 								placeholder="blur"
@@ -139,7 +140,7 @@ export default function Home() {
 							<div className="block lg:hidden w-full">
 								<div className="relative aspect-[16/9]">
 									<Image
-										src="/fired-house.jpg"
+										src="/fired-house.webp"
 										alt="Fire damage assessment"
 										fill
 										className="rounded-lg object-cover shadow-lg"
@@ -152,7 +153,7 @@ export default function Home() {
 								<div className="hidden lg:block w-full lg:w-1/2">
 									<div className="relative h-full">
 										<Image
-											src="/fired-house.jpg"
+											src="/fired-house.webp"
 											alt="Fire damage assessment"
 											fill
 											className="rounded-lg object-cover shadow-lg"
@@ -276,7 +277,7 @@ export default function Home() {
 							<div className="hidden lg:block h-full">
 								<div className="relative h-full rounded-2xl overflow-hidden">
 									<Image
-										src="/teams.jpg"
+										src="/teams.webp"
 										alt="Painting service"
 										fill
 										className="object-cover"
@@ -354,7 +355,7 @@ export default function Home() {
 										description:
 											'Schedule a no-cost consultation to assess your fire-damaged property and develop a preliminary evaluation plan for comprehensive structural inspection.',
 										align: 'left',
-										image: '/contact.jpg',
+										image: '/contact.webp',
 									},
 									{
 										step: '02',
@@ -362,7 +363,7 @@ export default function Home() {
 										description:
 											'Our licensed engineers conduct thorough on-site inspections using advanced equipment to evaluate structural integrity and document all damage conditions.',
 										align: 'right',
-										image: '/site-visit.jpg',
+										image: '/site-visit.webp',
 									},
 									{
 										step: '03',
@@ -370,7 +371,7 @@ export default function Home() {
 										description:
 											'Receive a comprehensive structural assessment report with detailed analysis, photos, and recommendations, certified by our licensed engineers for your records and insurance purposes.',
 										align: 'left',
-										image: '/report.jpg',
+										image: '/report.webp',
 									},
 								].map((step, i) => (
 									<div
