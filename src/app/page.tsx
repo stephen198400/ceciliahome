@@ -19,10 +19,7 @@ export default function Home() {
 		<div className="flex min-h-screen flex-col">
 			<header className="border-b">
 				<div className="container mx-auto flex h-20 items-center justify-between px-4">
-					<Link
-						href="/"
-						className="text-2xl font-bold hover:text-blue-600 transition-colors duration-300"
-					>
+					<Link href="/" className="text-2xl font-bold hover:text-blue-600">
 						Cecilia Home
 					</Link>
 					<PhoneButton />
@@ -253,9 +250,9 @@ export default function Home() {
 							].map((service, i) => (
 								<div
 									key={i}
-									className="group relative space-y-4 rounded-2xl border p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 will-change-transform"
+									className="relative space-y-4 rounded-2xl border p-8"
 								>
-									<service.icon className="h-8 w-8 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+									<service.icon className="h-8 w-8 text-blue-600 mb-4" />
 									<h3 className="text-xl font-bold">{service.title}</h3>
 									<p className="text-muted-foreground">{service.description}</p>
 								</div>
@@ -264,70 +261,11 @@ export default function Home() {
 					</div>
 				</section>
 
-				{/* Projects Section
-				<section className="border-t bg-gray-50 py-24">
-					<div className="container mx-auto px-4">
-						<div className="mb-16 text-center">
-							<h2 className="text-3xl font-bold md:text-4xl">
-								Recent Projects – Transforming Spaces Across Sorø
-							</h2>
-							<p className="mt-4 text-lg text-muted-foreground">
-								This headline highlights your recent work and emphasizes the
-								transformative impact of your painting services.
-							</p>
-						</div>
-						<div className="grid gap-8 md:grid-cols-2">
-							{[
-								{
-									title: 'Rapid Disaster Assessment',
-									description:
-										'Expert structural evaluation within 24-48 hours of site access clearance. We provide detailed damage reports and reconstruction recommendations that meet all California building codes.',
-									category: 'Specialty Finishes',
-									location: 'Sorø, Center',
-									duration: '3 Weeks',
-								},
-								{
-									title: 'Structural Reconstruction',
-									description:
-										'Complete structural design and engineering solutions for rebuilding your home, including fire-resistant materials and enhanced safety features.',
-									category: 'Commercial Painting',
-									location: 'Sorø, City',
-									duration: '2 Weeks',
-								},
-							].map((project, i) => (
-								<div
-									key={i}
-									className="group relative space-y-4 rounded-2xl border bg-white p-8"
-								>
-									<div className="aspect-video w-full overflow-hidden rounded-lg bg-gray-100" />
-									<h3 className="text-xl font-bold">{project.title}</h3>
-									<p className="text-muted-foreground">{project.description}</p>
-									<div className="flex flex-wrap gap-4 text-sm">
-										<span className="rounded-full bg-[#E6F4F7] px-3 py-1">
-											{project.category}
-										</span>
-										<span>{project.location}</span>
-										<span>{project.duration}</span>
-									</div>
-									<Link href="#" className="inline-block text-sm font-medium">
-										Read more
-									</Link>
-								</div>
-							))}
-						</div>
-						<div className="mt-12 text-center">
-							<Button variant="outline" size="lg">
-								All Projects
-							</Button>
-						</div>
-					</div>
-				</section> */}
-
 				{/* Features Section */}
 				<section className="py-24">
 					<div className="container mx-auto px-4">
-						<div className="grid gap-16 lg:grid-cols-2 hover:transform hover:scale-[1.02] transition-all duration-500">
-							{/* 左侧图片 - 在大屏幕显示 */}
+						<div className="grid gap-16 lg:grid-cols-2">
+							{/* 左侧图片 */}
 							<div className="hidden lg:block h-full">
 								<div className="relative h-full rounded-2xl overflow-hidden">
 									<Image
@@ -339,77 +277,48 @@ export default function Home() {
 								</div>
 							</div>
 
-							{/* 右侧内容 */}
-							<div className="flex flex-col">
-								<div className="space-y-4">
-									<h2 className="text-[40px] font-bold leading-tight">
-										Why Choose Us?
-									</h2>
-									<p className="text-lg text-muted-foreground">
-										We deliver comprehensive structural design and assessment
-										solutions with a focus on safety, innovation, and client
-										satisfaction.
-									</p>
-								</div>
-
-								{/* Features 网格 */}
-								<div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-12 mt-8">
-									{[
-										{
-											icon: Shield,
-											title: 'Licensed Engineers',
-											description:
-												'Our team of certified structural engineers brings decades of combined experience in California construction.',
-										},
-										{
-											icon: Cpu,
-											title: 'Advanced Technology',
-											description:
-												'State-of-the-art structural analysis tools and thermal imaging technology for precise assessments.',
-										},
-										{
-											icon: FileCheck,
-											title: 'Insurance Reports',
-											description:
-												'Professional assessment reports designed to maximize your insurance claims, backed by certified engineers.',
-										},
-										{
-											icon: Clock,
-											title: 'Free Consultation',
-											description:
-												'Free on-site inspection and consultation, followed by a comprehensive professional report for your property.',
-										},
-									].map((feature, i) => (
-										<div
-											key={i}
-											className="space-y-3 hover:transform hover:scale-105 transition-all duration-300"
-										>
-											<div className="flex items-center gap-3">
-												<div className="flex-shrink-0">
-													<feature.icon className="h-6 w-6 md:h-6 md:w-6 lg:h-7 lg:w-7 xl:h-8 xl:w-8 text-blue-600 group-hover:rotate-12 transition-transform duration-300" />
-												</div>
-												<h3 className="text-lg md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight whitespace-nowrap">
-													{feature.title}
-												</h3>
+							{/* Features 网格 */}
+							<div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-12 mt-8">
+								{[
+									{
+										icon: Shield,
+										title: 'Licensed Engineers',
+										description:
+											'Our team of certified structural engineers brings decades of combined experience in California construction.',
+									},
+									{
+										icon: Cpu,
+										title: 'Advanced Technology',
+										description:
+											'State-of-the-art structural analysis tools and thermal imaging technology for precise assessments.',
+									},
+									{
+										icon: FileCheck,
+										title: 'Insurance Reports',
+										description:
+											'Professional assessment reports designed to maximize your insurance claims, backed by certified engineers.',
+									},
+									{
+										icon: Clock,
+										title: 'Free Consultation',
+										description:
+											'Free on-site inspection and consultation, followed by a comprehensive professional report for your property.',
+									},
+								].map((feature, i) => (
+									<div key={i} className="space-y-3">
+										<div className="flex items-center gap-3">
+											<div className="flex-shrink-0">
+												<feature.icon className="h-6 w-6 md:h-6 md:w-6 lg:h-7 lg:w-7 xl:h-8 xl:w-8 text-blue-600" />
 											</div>
-											<p className="text-sm md:text-sm lg:text-base text-gray-600 leading-relaxed pl-[2.25rem]">
-												{feature.description}
-											</p>
+											<h3 className="text-lg md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight whitespace-nowrap">
+												{feature.title}
+											</h3>
 										</div>
-									))}
-								</div>
-							</div>
-
-							{/* 左侧图片 - 在小屏幕显示 */}
-							<div className="block lg:hidden h-[400px]">
-								<div className="relative h-full rounded-2xl overflow-hidden">
-									<Image
-										src="/teams.jpg"
-										alt="Painting service"
-										fill
-										className="object-cover"
-									/>
-								</div>
+										<p className="text-sm md:text-sm lg:text-base text-gray-600 leading-relaxed pl-[2.25rem]">
+											{feature.description}
+										</p>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
@@ -459,93 +368,33 @@ export default function Home() {
 								].map((step, i) => (
 									<div
 										key={i}
-										className="relative grid md:grid-cols-2 items-center gap-8 hover:transform hover:scale-[1.02] transition-all duration-500"
+										className="relative grid md:grid-cols-2 items-center gap-8"
 									>
-										{/* 在小屏幕时始终保持相同顺序 */}
-										<div className="block lg:hidden">
-											<div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border h-full flex flex-col justify-center">
-												<div className="relative">
-													<div className="absolute -top-12 -left-4 md:static">
-														<span className="flex items-center justify-center w-12 h-12 rounded-full step-number font-bold">
-															{step.step}
-														</span>
-													</div>
-													<h3 className="text-xl font-bold mt-6 md:mt-4">
-														{step.title}
-													</h3>
-													<p className="text-muted-foreground mt-2">
-														{step.description}
-													</p>
+										{/* Content */}
+										<div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border h-full flex flex-col justify-center">
+											<div className="relative">
+												<div className="md:static">
+													<span className="flex items-center justify-center w-12 h-12 rounded-full step-number font-bold">
+														{step.step}
+													</span>
 												</div>
-											</div>
-											<div className="aspect-[4/3] relative rounded-2xl overflow-hidden bg-gray-100 h-full mt-8">
-												<Image
-													src={step.image}
-													alt={step.title}
-													fill
-													className="object-cover"
-													sizes="(max-width: 768px) 100vw, 50vw"
-												/>
+												<h3 className="text-xl font-bold mt-6 md:mt-4">
+													{step.title}
+												</h3>
+												<p className="text-muted-foreground mt-2">
+													{step.description}
+												</p>
 											</div>
 										</div>
-
-										{/* 在大屏幕时根据 align 属性交错显示 */}
-										<div className="hidden lg:contents">
-											{step.align === 'left' ? (
-												<>
-													<div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border h-full flex flex-col justify-center">
-														<div className="relative">
-															<div className="absolute -top-12 -left-4 md:static">
-																<span className="flex items-center justify-center w-12 h-12 rounded-full step-number font-bold">
-																	{step.step}
-																</span>
-															</div>
-															<h3 className="text-xl font-bold mt-6 md:mt-4">
-																{step.title}
-															</h3>
-															<p className="text-muted-foreground mt-2">
-																{step.description}
-															</p>
-														</div>
-													</div>
-													<div className="aspect-[4/3] relative rounded-2xl overflow-hidden bg-gray-100 h-full">
-														<Image
-															src={step.image}
-															alt={step.title}
-															fill
-															className="object-cover"
-															sizes="(max-width: 768px) 100vw, 50vw"
-														/>
-													</div>
-												</>
-											) : (
-												<>
-													<div className="aspect-[4/3] relative rounded-2xl overflow-hidden bg-gray-100 h-full">
-														<Image
-															src={step.image}
-															alt={step.title}
-															fill
-															className="object-cover"
-															sizes="(max-width: 768px) 100vw, 50vw"
-														/>
-													</div>
-													<div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border h-full flex flex-col justify-center">
-														<div className="relative">
-															<div className="absolute -top-12 -left-4 md:static">
-																<span className="flex items-center justify-center w-12 h-12 rounded-full step-number font-bold">
-																	{step.step}
-																</span>
-															</div>
-															<h3 className="text-xl font-bold mt-6 md:mt-4">
-																{step.title}
-															</h3>
-															<p className="text-muted-foreground mt-2">
-																{step.description}
-															</p>
-														</div>
-													</div>
-												</>
-											)}
+										{/* Image */}
+										<div className="aspect-[4/3] relative rounded-2xl overflow-hidden bg-gray-100 h-full">
+											<Image
+												src={step.image}
+												alt={step.title}
+												fill
+												className="object-cover"
+												sizes="(max-width: 768px) 100vw, 50vw"
+											/>
 										</div>
 									</div>
 								))}
@@ -692,7 +541,7 @@ export default function Home() {
 				{/* CTA Section */}
 				<section className="py-24">
 					<div className="container mx-auto px-4">
-						<div className="rounded-2xl bg-gradient-to-br from-blue-700 to-blue-900 p-12 text-center md:p-24 text-white hover:shadow-2xl transition-all duration-500">
+						<div className="rounded-2xl bg-gradient-to-br from-blue-700 to-blue-900 p-12 text-center md:p-24 text-white">
 							<h2 className="text-3xl font-bold md:text-4xl">
 								Get Professional Help for Your Fire-Damaged Home!
 							</h2>
@@ -707,29 +556,13 @@ export default function Home() {
 									<ContactDialog>
 										<Button
 											size="lg"
-											className="bg-white text-blue-900 hover:bg-blue-50 w-full transform hover:scale-105 transition-all duration-300"
+											className="bg-white text-blue-900 hover:bg-blue-50 w-full"
 										>
 											<Calendar className="mr-2 h-5 w-5" />
 											Get Free Consultation
 										</Button>
 									</ContactDialog>
 									<PhoneButton />
-								</div>
-							</div>
-
-							{/* 添加特色标签 */}
-							<div className="mt-12 flex flex-wrap justify-center gap-8">
-								<div className="flex items-center text-blue-100">
-									<Clock className="mr-2 h-5 w-5" />
-									<span>24/7 Emergency Response</span>
-								</div>
-								<div className="flex items-center text-blue-100">
-									<Shield className="mr-2 h-5 w-5" />
-									<span>Licensed Engineers</span>
-								</div>
-								<div className="flex items-center text-blue-100">
-									<FileCheck className="mr-2 h-5 w-5" />
-									<span>Insurance Specialists</span>
 								</div>
 							</div>
 						</div>
