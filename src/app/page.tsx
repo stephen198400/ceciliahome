@@ -33,39 +33,23 @@ export default function Home() {
 				{/* Hero Section */}
 				<section className="py-10 md:py-24">
 					<div className="container mx-auto grid gap-12 px-4 md:grid-cols-2 md:items-center">
-						<div className="space-y-8">
-							<div>
-								<p className="text-sm uppercase font-medium text-blue-600 animate-fade-in">
-									Rebuild Stronger
-								</p>
-								<h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl animate-fade-in-up">
-									Expert Post-Wildfire Structural Inspection
-								</h1>
-							</div>
-							<p className="text-lg text-muted-foreground animate-fade-in-up [animation-delay:200ms]">
+						<div className="space-y-6">
+							<p className="text-sm uppercase font-medium text-blue-600">
+								Rebuild Stronger
+							</p>
+							<h1 className="text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl">
+								Expert Post-Wildfire Structural Inspection
+							</h1>
+							<p className="text-lg text-muted-foreground">
 								Wildfire damage? Serving Southern California with professional
 								structural inspections and certified reports for your insurance
 								claims. Our reliable assessments help protect your property and
 								maximize settlement outcomes.
 							</p>
-							{/* <ul className="space-y-3">
-								<li className="flex items-center">
-									<Check className="mr-2 h-5 w-5 text-blue-600" />
-									<span>Over 20 years of experience</span>
-								</li>
-								<li className="flex items-center">
-									<Check className="mr-2 h-5 w-5 text-blue-600" />
-									<span>2000+ Projects Completed</span>
-								</li>
-								<li className="flex items-center">
-									<Check className="mr-2 h-5 w-5 text-blue-600" />
-									<span>24/7 Emergency Response</span>
-								</li>
-							</ul> */}
 							<ContactDialog>
 								<Button
 									size="lg"
-									className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
+									className="bg-blue-600 text-white hover:bg-blue-700"
 								>
 									Get Free Consultation
 								</Button>
@@ -77,11 +61,14 @@ export default function Home() {
 								alt="Professional structural engineer inspecting fire damage"
 								fill
 								priority
-								loading="eager"
-								placeholder="blur"
-								blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+								sizes="(max-width: 768px) 100vw, 50vw"
 								className="rounded-2xl object-cover"
-								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+								loading="eager"
+								fetchPriority="high"
+								style={{
+									transform: 'translate3d(0, 0, 0)',
+									backfaceVisibility: 'hidden',
+								}}
 							/>
 						</div>
 					</div>
