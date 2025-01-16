@@ -77,8 +77,11 @@ export default function Home() {
 								alt="Professional structural engineer inspecting fire damage"
 								fill
 								priority
+								loading="eager"
+								placeholder="blur"
+								blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
 								className="rounded-2xl object-cover"
-								sizes="(max-width: 768px) 100vw, 50vw"
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 							/>
 						</div>
 					</div>
@@ -579,7 +582,10 @@ export default function Home() {
 						{/* 添加自动滚动容器 */}
 						<div className="relative -mx-4 px-4">
 							<div className="review-scroll max-w-[1536px] mx-auto overflow-hidden">
-								<div className="review-scroll-content flex gap-8 animate-scroll">
+								<div
+									className="review-scroll-content flex gap-8"
+									style={{ willChange: 'transform' }}
+								>
 									{[
 										{
 											platform: 'Thumbtack',

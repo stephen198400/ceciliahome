@@ -9,6 +9,10 @@ const nextConfig = {
 						key: 'X-Robots-Tag',
 						value: 'index, follow',
 					},
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=31536000, immutable',
+					},
 				],
 			},
 		];
@@ -26,7 +30,13 @@ const nextConfig = {
 	},
 	experimental: {
 		optimizeCss: true,
+		optimizePackageImports: ['lucide-react'],
+		scrollRestoration: true,
 	},
+	compiler: {
+		removeConsole: process.env.NODE_ENV === 'production',
+	},
+	poweredByHeader: false,
 };
 
 module.exports = nextConfig;

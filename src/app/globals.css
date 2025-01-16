@@ -140,16 +140,20 @@ body {
 
 .review-scroll-content {
 	display: flex;
-	gap: 2rem; /* 32px */
-	animation: scroll 30s linear infinite;
+	gap: 2rem;
+	will-change: transform;
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+	animation: scroll 40s linear infinite;
 }
 
 @keyframes scroll {
 	0% {
-		transform: translateX(0);
+		transform: translate3d(0, 0, 0);
 	}
 	100% {
-		transform: translateX(calc(-33.333% * 5 - 2rem * 5));
+		transform: translate3d(calc(-33.333% * 5 - 2rem * 5), 0, 0);
 	}
 }
 
@@ -190,6 +194,15 @@ body {
 		black 90%,
 		transparent
 	);
+	-webkit-mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+	overflow: hidden;
+	isolation: isolate;
 }
 
 .review-scroll-content {
