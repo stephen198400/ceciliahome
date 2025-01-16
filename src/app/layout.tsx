@@ -6,8 +6,10 @@ import './globals.css';
 
 const inter = Inter({
 	subsets: ['latin'],
-	display: 'optional',
+	display: 'swap',
 	preload: true,
+	weight: ['400', '500', '600', '700'],
+	variable: '--font-inter',
 	fallback: [
 		'-apple-system',
 		'BlinkMacSystemFont',

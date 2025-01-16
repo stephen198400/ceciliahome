@@ -1,18 +1,52 @@
-import { ContactDialog } from '@/components/contact-dialog';
 import { PhoneButton } from '@/components/PhoneButton';
-import { ReviewCard } from '@/components/ReviewCard';
 import { Button } from '@/components/ui/button';
-import {
-	Calendar,
-	Clock,
-	Cpu,
-	FileCheck,
-	Shield,
-	UserCheck,
-	Users,
-} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+
+// 动态导入组件
+const ContactDialog = dynamic(
+	() => import('@/components/contact-dialog').then((mod) => mod.ContactDialog),
+	{
+		ssr: false,
+		loading: () => (
+			<Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+				Loading...
+			</Button>
+		),
+	}
+);
+
+const ReviewCard = dynamic(
+	() => import('@/components/ReviewCard').then((mod) => mod.ReviewCard),
+	{ ssr: true }
+);
+
+// 动态导入图标
+const Icons = {
+	Calendar: dynamic(() =>
+		import('lucide-react').then((mod) => mod.Calendar)
+	) as unknown as LucideIcon,
+	Clock: dynamic(() =>
+		import('lucide-react').then((mod) => mod.Clock)
+	) as unknown as LucideIcon,
+	Cpu: dynamic(() =>
+		import('lucide-react').then((mod) => mod.Cpu)
+	) as unknown as LucideIcon,
+	FileCheck: dynamic(() =>
+		import('lucide-react').then((mod) => mod.FileCheck)
+	) as unknown as LucideIcon,
+	Shield: dynamic(() =>
+		import('lucide-react').then((mod) => mod.Shield)
+	) as unknown as LucideIcon,
+	UserCheck: dynamic(() =>
+		import('lucide-react').then((mod) => mod.UserCheck)
+	) as unknown as LucideIcon,
+	Users: dynamic(() =>
+		import('lucide-react').then((mod) => mod.Users)
+	) as unknown as LucideIcon,
+};
 
 export default function Home() {
 	return (
@@ -78,22 +112,22 @@ export default function Home() {
 								{
 									number: '2000+',
 									label: 'Projects',
-									icon: FileCheck,
+									icon: Icons.FileCheck,
 								},
 								{
 									number: '1000+',
 									label: 'Clients',
-									icon: Users,
+									icon: Icons.Users,
 								},
 								{
 									number: '20+',
 									label: 'Years of experience',
-									icon: Calendar,
+									icon: Icons.Calendar,
 								},
 								{
 									number: '20+',
 									label: 'Team Members',
-									icon: UserCheck,
+									icon: Icons.UserCheck,
 								},
 							].map((stat, i) => (
 								<div
@@ -226,19 +260,19 @@ export default function Home() {
 						<div className="grid gap-8 md:grid-cols-3">
 							{[
 								{
-									icon: Clock,
+									icon: Icons.Clock,
 									title: 'Rapid Disaster Inspection',
 									description:
 										'Expert structural evaluation within 24-48 hours of site access clearance. We provide detailed damage reports and reconstruction recommendations that meet all California building codes.',
 								},
 								{
-									icon: FileCheck,
+									icon: Icons.FileCheck,
 									title: 'Structural Reconstruction',
 									description:
 										'Complete structural design and engineering solutions for rebuilding your home, including fire-resistant materials and enhanced safety features.',
 								},
 								{
-									icon: Shield,
+									icon: Icons.Shield,
 									title: 'Safety Compliance',
 									description:
 										'All reconstruction plans are fully compliant with current California fire codes and local building regulations, ensuring long-term safety and property value.',
@@ -277,25 +311,25 @@ export default function Home() {
 							<div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-12 mt-8">
 								{[
 									{
-										icon: Shield,
+										icon: Icons.Shield,
 										title: 'Licensed Engineers',
 										description:
 											'Our team of certified structural engineers brings decades of combined experience in California construction.',
 									},
 									{
-										icon: Cpu,
+										icon: Icons.Cpu,
 										title: 'Advanced Technology',
 										description:
 											'State-of-the-art structural analysis tools and thermal imaging technology for precise assessments.',
 									},
 									{
-										icon: FileCheck,
+										icon: Icons.FileCheck,
 										title: 'Insurance Reports',
 										description:
 											'Professional assessment reports designed to maximize your insurance claims, backed by certified engineers.',
 									},
 									{
-										icon: Clock,
+										icon: Icons.Clock,
 										title: 'Free Consultation',
 										description:
 											'Free on-site inspection and consultation, followed by a comprehensive professional report for your property.',
@@ -554,7 +588,7 @@ export default function Home() {
 											size="lg"
 											className="bg-white text-blue-900 hover:bg-blue-50 w-full"
 										>
-											<Calendar className="mr-2 h-5 w-5" />
+											<Icons.Calendar className="mr-2 h-5 w-5" />
 											Get Free Consultation
 										</Button>
 									</ContactDialog>
