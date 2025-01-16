@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+	const baseUrl = 'https://ceciliahome.design';
+
 	return [
 		{
-			url: 'https://ceciliahome.design',
-			lastModified: new Date(),
-			changeFrequency: 'weekly',
+			url: baseUrl,
+			lastModified: new Date().toISOString(),
+			changeFrequency: 'daily',
 			priority: 1,
 		},
 	];
