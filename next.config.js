@@ -13,6 +13,36 @@ const nextConfig = {
 						key: 'Cache-Control',
 						value: 'public, max-age=31536000, immutable',
 					},
+					{
+						key: 'X-Content-Type-Options',
+						value: 'nosniff',
+					},
+					{
+						key: 'X-Frame-Options',
+						value: 'DENY',
+					},
+					{
+						key: 'X-XSS-Protection',
+						value: '1; mode=block',
+					},
+				],
+			},
+			{
+				source: '/fonts/:path*',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=31536000, immutable',
+					},
+				],
+			},
+			{
+				source: '/images/:path*',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=31536000, immutable',
+					},
 				],
 			},
 		];
@@ -32,11 +62,13 @@ const nextConfig = {
 		optimizeCss: true,
 		optimizePackageImports: ['lucide-react'],
 		scrollRestoration: true,
+		webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
 	},
 	compiler: {
 		removeConsole: process.env.NODE_ENV === 'production',
 	},
 	poweredByHeader: false,
+	compress: true,
 };
 
 module.exports = nextConfig;
