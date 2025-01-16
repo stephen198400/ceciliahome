@@ -53,28 +53,16 @@ export default function Home() {
 							</ContactDialog>
 						</div>
 						<div className="relative aspect-square">
-							<Image
-								src="/hero.webp"
-								alt="Expert Post-Wildfire Structural Inspection"
-								width={1920}
-								height={1080}
-								sizes="(max-width: 768px) 100vw, 50vw"
-								priority
-								quality={85}
-								placeholder="blur"
-								blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQrJiEkKic0Ly4vLy4nOjk6Njo5QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUH/2wBDAR0XFyAeIBogHiAeIiIgHiUkIiIiJUwlJSUlJUwxLC4sLiwuMTQ5OTk5NDlBQUFBQUFBQUFBQUFBQUFBQUFBQUH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-								loading="eager"
-								fetchPriority="high"
-								style={{
-									width: '100%',
-									height: 'auto',
-									objectFit: 'cover',
-									transform: 'translate3d(0, 0, 0)',
-									backfaceVisibility: 'hidden',
-									willChange: 'transform',
-								}}
-								className="rounded-lg shadow-xl"
-							/>
+							<div className="relative aspect-square">
+								<Image
+									src="/hero.webp"
+									alt="Professional structural engineer inspecting fire damage"
+									fill
+									priority
+									className="rounded-2xl object-cover"
+									sizes="(max-width: 768px) 100vw, 50vw"
+								/>
+							</div>
 						</div>
 					</div>
 				</section>
