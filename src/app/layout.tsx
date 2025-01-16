@@ -2,7 +2,22 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-const inter = Inter({ subsets: ['latin'] });
+
+const inter = Inter({
+	subsets: ['latin'],
+	display: 'swap',
+	preload: true,
+	fallback: [
+		'system-ui',
+		'-apple-system',
+		'Segoe UI',
+		'Roboto',
+		'Arial',
+		'sans-serif',
+	],
+	adjustFontFallback: true,
+	variable: '--font-inter',
+});
 
 export const viewport: Viewport = {
 	width: 'device-width',
@@ -11,7 +26,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://ceciliahome.net'),
+	metadataBase: new URL('https://ceciliahome.design'),
 	title:
 		'Cecilia Home Engineering | Expert Post-Wildfire Structural Inspection',
 	description:

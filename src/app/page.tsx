@@ -42,7 +42,7 @@ export default function Home() {
 								<p className="text-sm uppercase font-medium text-blue-600">
 									Rebuild Stronger
 								</p>
-								<h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl">
+								<h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-gray-900">
 									Expert Post-Wildfire Structural Inspection
 								</h1>
 							</div>
