@@ -42,7 +42,7 @@ export default function Home() {
 								<p className="text-sm uppercase font-medium text-blue-600">
 									Rebuild Stronger
 								</p>
-								<h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl">
+								<h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl">
 									Expert Post-Wildfire Structural Inspection
 								</h1>
 							</div>
@@ -52,20 +52,6 @@ export default function Home() {
 								claims. Our reliable assessments help protect your property and
 								maximize settlement outcomes.
 							</p>
-							{/* <ul className="space-y-3">
-								<li className="flex items-center">
-									<Check className="mr-2 h-5 w-5 text-blue-600" />
-									<span>Over 20 years of experience</span>
-								</li>
-								<li className="flex items-center">
-									<Check className="mr-2 h-5 w-5 text-blue-600" />
-									<span>2000+ Projects Completed</span>
-								</li>
-								<li className="flex items-center">
-									<Check className="mr-2 h-5 w-5 text-blue-600" />
-									<span>24/7 Emergency Response</span>
-								</li>
-							</ul> */}
 							<ContactDialog>
 								<Button
 									size="lg"
