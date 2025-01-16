@@ -6,9 +6,22 @@ import './globals.css';
 
 const inter = Inter({
 	subsets: ['latin'],
-	display: 'swap',
+	display: 'optional',
 	preload: true,
-	fallback: ['system-ui', 'arial'],
+	fallback: [
+		'-apple-system',
+		'BlinkMacSystemFont',
+		'Segoe UI',
+		'Roboto',
+		'Oxygen',
+		'Ubuntu',
+		'Cantarell',
+		'Fira Sans',
+		'Droid Sans',
+		'Helvetica Neue',
+		'sans-serif',
+	],
+	adjustFontFallback: true,
 });
 
 export const viewport: Viewport = {

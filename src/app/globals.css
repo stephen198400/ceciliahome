@@ -212,3 +212,19 @@ body {
 .review-scroll-content:hover {
 	animation-play-state: paused;
 }
+
+/* 添加关键渲染路径的样式 */
+@layer critical {
+	.hero-section {
+		content-visibility: auto;
+		contain-intrinsic-size: 1px 5000px;
+	}
+
+	h1 {
+		text-rendering: optimizeLegibility;
+	}
+
+	img {
+		text-indent: -9999px;
+	}
+}
