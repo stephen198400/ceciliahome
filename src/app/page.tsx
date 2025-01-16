@@ -1,3 +1,4 @@
+import { ContactDialogWrapper } from '@/components/contact-dialog-wrapper';
 import { PhoneButton } from '@/components/PhoneButton';
 import { Button } from '@/components/ui/button';
 import type { LucideIcon } from 'lucide-react';
@@ -6,21 +7,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // 动态导入组件
-const ContactDialog = dynamic(
-	() => import('@/components/contact-dialog').then((mod) => mod.ContactDialog),
-	{
-		ssr: false,
-		loading: () => (
-			<Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-				Loading...
-			</Button>
-		),
-	}
-);
-
-const ReviewCard = dynamic(
-	() => import('@/components/ReviewCard').then((mod) => mod.ReviewCard),
-	{ ssr: true }
+const ReviewCard = dynamic(() =>
+	import('@/components/ReviewCard').then((mod) => mod.ReviewCard)
 );
 
 // 动态导入图标
@@ -77,14 +65,14 @@ export default function Home() {
 								claims. Our reliable assessments help protect your property and
 								maximize settlement outcomes.
 							</p>
-							<ContactDialog>
+							<ContactDialogWrapper>
 								<Button
 									size="lg"
 									className="bg-blue-600 text-white hover:bg-blue-700"
 								>
 									Get Free Consultation
 								</Button>
-							</ContactDialog>
+							</ContactDialogWrapper>
 						</div>
 						<div className="relative aspect-square">
 							<div className="relative aspect-square">
@@ -229,14 +217,14 @@ export default function Home() {
 
 									{/* CTA Section */}
 									<div className="pt-8">
-										<ContactDialog>
+										<ContactDialogWrapper>
 											<Button
 												size="lg"
 												className="bg-blue-600 text-white hover:bg-blue-700"
 											>
 												Get Free Consultation
 											</Button>
-										</ContactDialog>
+										</ContactDialogWrapper>
 									</div>
 								</div>
 							</div>
@@ -583,7 +571,7 @@ export default function Home() {
 							</p>
 							<div className="mt-8 flex flex-wrap justify-center gap-4">
 								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl">
-									<ContactDialog>
+									<ContactDialogWrapper>
 										<Button
 											size="lg"
 											className="bg-white text-blue-900 hover:bg-blue-50 w-full"
@@ -591,7 +579,7 @@ export default function Home() {
 											<Icons.Calendar className="mr-2 h-5 w-5" />
 											Get Free Consultation
 										</Button>
-									</ContactDialog>
+									</ContactDialogWrapper>
 									<PhoneButton />
 								</div>
 							</div>
