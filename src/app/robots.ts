@@ -11,10 +11,8 @@ export default function robots(): MetadataRoute.Robots {
 			{
 				userAgent: 'Googlebot',
 				allow: '/',
-				crawlDelay: 2,
 			},
 		],
-		sitemap: 'https://ceciliahome.design/sitemap.xml',
-		host: 'https://ceciliahome.design',
+		sitemap: 'https://www.ceciliahome.design/sitemap.xml', // ✅ 确保和 Vercel 配置一致
 	};
 }
