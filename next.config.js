@@ -1,5 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	async redirects() {
+		return [
+			{
+				source: '/:path*',
+				has: [
+					{
+						type: 'host',
+						value: 'ceciliahome.design',
+					},
+				],
+				permanent: true,
+				destination: 'https://www.ceciliahome.design/:path*',
+			},
+		];
+	},
 	async headers() {
 		return [
 			{
