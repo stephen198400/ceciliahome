@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://ceciliahome.design'),
+	metadataBase: new URL('https://www.ceciliahome.design'),
 	title:
 		'Cecilia Home Engineering | Expert Post-Wildfire Structural Inspection',
 	description:
